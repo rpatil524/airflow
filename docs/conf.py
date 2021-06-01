@@ -255,8 +255,11 @@ if PACKAGE_NAME == 'apache-airflow':
     html_extra_path = [
         f"{ROOT_DIR}/docs/apache-airflow/start/airflow.sh",
     ]
-    html_extra_with_substituions = [
+    html_extra_with_substitutions = [
         f"{ROOT_DIR}/docs/apache-airflow/start/docker-compose.yaml",
+    ]
+    manual_substitutions_in_generated_html = [
+        "installation.html",
     ]
 
 # -- Theme configuration -------------------------------------------------------
@@ -518,6 +521,7 @@ intersphinx_mapping = {
     for pkg_name in [
         'boto3',
         'celery',
+        'docker',
         'hdfs',
         'jinja2',
         'mongodb',
